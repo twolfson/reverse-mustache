@@ -29,9 +29,9 @@
     "test": "echo \"No tests =(\" 1>&2 && exit 1"
   },
   "dependencies": {
+    "mustache": "~0.8.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "keywords": [],
   "private": true
 }
