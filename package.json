@@ -1,0 +1,37 @@
+{
+  "name": "gist-reverse-template-poc",
+  "description": "The best project ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/todd/gist-reverse-template-poc",
+  "author": {
+    "name": "Todd Wolfson",
+    "email": "todd@twolfson.com",
+    "url": "http://twolfson.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/todd/gist-reverse-template-poc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/todd/gist-reverse-template-poc/issues"
+  },
+  "licenses": [
+    {
+      "type": "UNLICENSE",
+      "url": "https://github.com/todd/gist-reverse-template-poc/blob/master/UNLICENSE"
+    }
+  ],
+  "main": "index",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "echo \"No tests =(\" 1>&2 && exit 1"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "keywords": [],
+  "private": true
+}
