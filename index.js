@@ -19,13 +19,18 @@ console.log(content);
 
 // This says depth first traversal. Let's do that and aim for the first working solution.
 
-function backtrack(tree) {
-  if (reject(P, tree)) {
-    return false;
+function dfs(tokens) {
+  var i = 0;
+  var len = tokens.length;
+  for (; i < len; i++) {
+    var token = tokens[i];
+    switch (token) {
+      case '#': // If/loop
+        // Treat as `if` for now
+        break;
+      case 'text':
+        break;
+    }
   }
-  if (accept(P, tree)) {
-    return output(P, tree);
-  }
-
-  var s =
 }
+dfs(ast);
