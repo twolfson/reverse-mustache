@@ -28,6 +28,7 @@ function dfs(tokens) {
     switch (type) {
       case '#': // If/loop
         // Treat as `if` for now
+        // TODO: Recurse but I am out of time
         // Try out using content as `true`
 
         // Try out using content as `false`
@@ -50,5 +51,6 @@ function dfs(tokens) {
         break;
     }
   }
+  return true;
 }
-dfs(ast);
+console.log('result ', dfs(ast));
