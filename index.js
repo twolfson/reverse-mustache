@@ -28,6 +28,11 @@ function dfs(tokens) {
     switch (type) {
       case '#': // If/loop
         // Treat as `if` for now
+        // Try out using content as `true`
+
+        // Try out using content as `false`
+
+        // If neither worked, reject it
         console.log(token, content);
         break;
       case 'text': // Text
