@@ -23,6 +23,7 @@ tokens.forEach(function iterateNode (token) {
       // If/For
       break;
     case 'text':
-
+      // Text case
+      break;
   }
 });
