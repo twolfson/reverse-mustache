@@ -4,8 +4,8 @@ var template = 'hello {{#world}}moon{{/world}}';
 var ast = mustache.parse(template);
 var content = mustache.render(template, {world: true});
 
-console.log(ast[1]);
-console.log(content);
+// console.log(ast[1]);
+// console.log(content);
 
 // TODO: We should still probably draw out an automata diagram
 // But... let's re-invent regular expressions with booleans
@@ -24,11 +24,24 @@ function dfs(tokens) {
   var len = tokens.length;
   for (; i < len; i++) {
     var token = tokens[i];
-    switch (token) {
+    var type = token[0];
+    switch (type) {
       case '#': // If/loop
         // Treat as `if` for now
+        console.log(token, content);
         break;
-      case 'text':
+      case 'text': // Text
+        // Slice the next snippet of text
+        var expectedText = token[1];
+        // TODO: We should have a progressive portion of content
+        var actualText = content.slice(0, expectedText.length);
+
+        // If it does not match, reject it
+        if (actualText !== expectedText) {
+          return false;
+        } else {
+          content = content.slice(expectedText.length);
+        }
         break;
     }
   }
