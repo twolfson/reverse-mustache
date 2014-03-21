@@ -15,15 +15,17 @@ console.log(content);
 
 // TODO: We probably want one of these http://en.wikipedia.org/wiki/Backtracking
 
-var tokens = ast;
-tokens.forEach(function iterateNode (token) {
-  var type = token[0];
-  switch (type) {
-    case '#':
-      // If/For
-      break;
-    case 'text':
-      // Text case
-      break;
+// Bleh, not straight forward.
+
+// This says depth first traversal. Let's do that and aim for the first working solution.
+
+function backtrack(tree) {
+  if (reject(P, tree)) {
+    return false;
   }
-});
+  if (accept(P, tree)) {
+    return output(P, tree);
+  }
+
+  var s =
+}
