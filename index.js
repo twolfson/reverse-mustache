@@ -29,7 +29,7 @@ function dfs(content, tokens) {
       case '#': // If/loop
         // Treat as `if` for now
         // TODO: Recurse but I am out of time
-        var subtokens = token[3];
+        var subtokens = token[4];
         var matches = dfs(content, subtokens);
 
         // Try out using content as `true`
@@ -45,6 +45,7 @@ function dfs(content, tokens) {
         var expectedText = token[1];
         // TODO: We should have a progressive portion of content
         var actualText = content.slice(0, expectedText.length);
+        console.log(actualText);
 
         // If it does not match, reject it
         if (actualText !== expectedText) {
