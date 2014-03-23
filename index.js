@@ -19,6 +19,10 @@ var content = mustache.render(template, {world: true});
 
 // This says depth first traversal. Let's do that and aim for the first working solution.
 
+// TODO: Relocate into a full repo with tests
+// TODO: Since mustache is ambiguous, we should require a schema to get our feet off the ground. It will significantly help with nested info
+// DEV: If we were to use regular expressions, we would lose accuracy of re-using variable values
+
 function dfs(content, tokens) {
   var i = 0;
   var len = tokens.length;
