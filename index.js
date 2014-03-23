@@ -22,6 +22,7 @@ var content = mustache.render(template, {world: true});
 function dfs(content, tokens) {
   var i = 0;
   var len = tokens.length;
+  var retObj = {};
   for (; i < len; i++) {
     var token = tokens[i];
     var type = token[0];
@@ -29,6 +30,8 @@ function dfs(content, tokens) {
       case '#': // If/loop
         // Treat as `if` for now
         // TODO: Recurse but I am out of time
+        // TODO: This is going to have to stop matching the subcontent at some point
+        // hello {{moon}} and more
         var subtokens = token[4];
         var matches = dfs(content, subtokens);
 
@@ -56,6 +59,6 @@ function dfs(content, tokens) {
         break;
     }
   }
-  return true;
+  return retObj;
 }
 console.log('result ', dfs(content, ast));
