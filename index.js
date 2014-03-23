@@ -24,6 +24,9 @@ function dfs(content, tokens) {
   var len = tokens.length;
   var tokensByName = {};
   var meta = {};
+  // TODO: We should be re-using tokensByName from top-levels (via deep clone)
+  // TODO: Figure out how the hell to deal with subpaths (maybe getval, setval)
+  // TODO: We are going to need to use sub-tokensByName as with mustache. Maybe re-use their lookup tooling?
   var retObj = {
     meta: meta,
     tokensByName: tokensByName
