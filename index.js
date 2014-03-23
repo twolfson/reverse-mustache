@@ -22,7 +22,12 @@ var content = mustache.render(template, {world: true});
 function dfs(content, tokens) {
   var i = 0;
   var len = tokens.length;
-  var retObj = {};
+  var tokensByName = {};
+  var meta = {};
+  var retObj = {
+    meta: meta,
+    tokensByName: tokensByName
+  };
   for (; i < len; i++) {
     var token = tokens[i];
     var type = token[0];
@@ -33,27 +38,30 @@ function dfs(content, tokens) {
         // TODO: This is going to have to stop matching the subcontent at some point
         // hello {{moon}} and more
         var subtokens = token[4];
-        var matches = dfs(content, subtokens);
+        var result = dfs(content, subtokens);
 
-        // Try out using content as `true`
-        console.log('matches', matches);
-
-        // Try out using content as `false`
-
-        // If neither worked, reject it
-        console.log(token, content);
+        // If the content matched, save our boolean as true
+        if (result) {
+          tokensByName[token[1]] = true;
+          // TODO: These actions can probably be abstracted
+          content = content.slice(result.meta.length);
+          meta.length = (meta.length || 0) + result.meta.length;
+        // Otherwise, mark the boolean as false
+        // DEV: This will fail on future steps if it is not `false` either
+        } else {
+          tokensByName[token[1]] = false;
+        }
         break;
       case 'text': // Text
         // Slice the next snippet of text
         var expectedText = token[1];
-        // TODO: We should have a progressive portion of content
         var actualText = content.slice(0, expectedText.length);
-        console.log(actualText);
 
         // If it does not match, reject it
         if (actualText !== expectedText) {
           return false;
         } else {
+          meta.length = (meta.length || 0) + expectedText.length;
           content = content.slice(expectedText.length);
         }
         break;
