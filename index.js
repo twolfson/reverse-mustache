@@ -19,7 +19,7 @@ var content = mustache.render(template, {world: true});
 
 // This says depth first traversal. Let's do that and aim for the first working solution.
 
-function dfs(tokens) {
+function dfs(content, tokens) {
   var i = 0;
   var len = tokens.length;
   for (; i < len; i++) {
@@ -29,7 +29,11 @@ function dfs(tokens) {
       case '#': // If/loop
         // Treat as `if` for now
         // TODO: Recurse but I am out of time
+        var subtokens = token[3];
+        var matches = dfs(content, subtokens);
+
         // Try out using content as `true`
+        console.log('matches', matches);
 
         // Try out using content as `false`
 
@@ -53,4 +57,4 @@ function dfs(tokens) {
   }
   return true;
 }
-console.log('result ', dfs(ast));
+console.log('result ', dfs(content, ast));
