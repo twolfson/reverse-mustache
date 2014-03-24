@@ -29,7 +29,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "mustache": "~0.8.1"
+    "mustache": "~0.8.1",
+    "clone": "~0.1.11"
   },
   "devDependencies": {
     "mocha": "~1.11.0",
