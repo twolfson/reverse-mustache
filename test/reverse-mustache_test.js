@@ -1,5 +1,7 @@
-var reverse_mustache = require('../');
+// Load in library
+var reverseMustache = require('../');
 
+// TODO: Embrace the same flat file mantra as mustache.js
 // TODO: We should be able to reverse the mustache test suite
 
 describe('A mustache template without any mustache tokens', function () {
@@ -18,6 +20,11 @@ describe('A mustache template without any mustache tokens', function () {
 
 describe.skip('A mustache template with a conditional token', function () {
   describe('when reversed with matching content (boolean true)', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{#world}}moon{{/world}}',
+      content: 'hello moon'
+    });
+
     it('returns meta information', function () {
 
     });
