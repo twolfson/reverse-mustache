@@ -1,8 +1,8 @@
 {
-  "name": "gist-reverse-template-poc",
-  "description": "The best project ever.",
+  "name": "reverse-mustache",
+  "description": "Reverse templating library for mustache",
   "version": "0.1.0",
-  "homepage": "https://github.com/todd/gist-reverse-template-poc",
+  "homepage": "https://github.com/twolfson/reverse-mustache",
   "author": {
     "name": "Todd Wolfson",
     "email": "todd@twolfson.com",
@@ -10,28 +10,37 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/todd/gist-reverse-template-poc.git"
+    "url": "git://github.com/twolfson/reverse-mustache.git"
   },
   "bugs": {
-    "url": "https://github.com/todd/gist-reverse-template-poc/issues"
+    "url": "https://github.com/twolfson/reverse-mustache/issues"
   },
   "licenses": [
     {
       "type": "UNLICENSE",
-      "url": "https://github.com/todd/gist-reverse-template-poc/blob/master/UNLICENSE"
+      "url": "https://github.com/twolfson/reverse-mustache/blob/master/UNLICENSE"
     }
   ],
-  "main": "index",
+  "main": "lib/reverse-mustache",
   "engines": {
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "echo \"No tests =(\" 1>&2 && exit 1"
+    "test": "mocha"
   },
   "dependencies": {
     "mustache": "~0.8.1"
   },
-  "devDependencies": {},
-  "keywords": [],
-  "private": true
+  "devDependencies": {
+    "mocha": "~1.11.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.4.0"
+  },
+  "keywords": [
+    "mustache",
+    "reverse template",
+    "reverse mustache",
+    "inverse template"
+  ]
 }
