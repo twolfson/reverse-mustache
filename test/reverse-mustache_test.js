@@ -1,4 +1,5 @@
 // Load in library
+var expect = require('chai').expect;
 var reverseMustache = require('../');
 
 // Define helper utilities
@@ -38,7 +39,8 @@ describe('A mustache template with a conditional token', function () {
     });
 
     it('returns meta information', function () {
-
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({world: true});
     });
   });
 
