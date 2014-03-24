@@ -18,7 +18,7 @@ var reverseMustacheUtils = {
 // TODO: We should be able to reverse the mustache test suite
 
 describe('A mustache template without any mustache tokens', function () {
-  describe('when reversed with matching content', function () {
+  describe.only('when reversed with matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello moon',
       content: 'hello moon'
@@ -43,7 +43,7 @@ describe('A mustache template without any mustache tokens', function () {
 });
 
 describe('A mustache template with a terminating conditional token', function () {
-  describe.only('when reversed with matching content (boolean true)', function () {
+  describe('when reversed with matching content (boolean true)', function () {
     reverseMustacheUtils.save({
       template: 'hello {{#world}}moon{{/world}}',
       content: 'hello moon'
