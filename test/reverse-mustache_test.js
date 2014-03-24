@@ -92,6 +92,7 @@ describe('A mustache template with an inline conditional token', function () {
     });
   });
 
+  // DEV: This is the first instance of where we need to backtrack
   describe.only('when reversed with matching content (boolean false)', function () {
     reverseMustacheUtils.save({
       template: 'hello {{#world}}there{{/world}} moon',
@@ -99,6 +100,7 @@ describe('A mustache template with an inline conditional token', function () {
     });
 
     it('returns meta information', function () {
+      console.log(this.result);
       expect(this.result).to.not.equal(null);
       expect(this.result.tokensByName).to.deep.equal({world: false});
     });
