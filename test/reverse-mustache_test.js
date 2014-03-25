@@ -118,7 +118,7 @@ describe('A mustache template with an inline conditional token', function () {
 });
 
 describe('A mustache template with a variable', function () {
-  describe.only('when reversed with matching content', function () {
+  describe('when reversed with matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello {{place}}',
       content: 'hello moon'
@@ -133,7 +133,7 @@ describe('A mustache template with a variable', function () {
   describe('when reversed with non-matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello {{place}}',
-      content: 'hello moon'
+      content: 'hello'
     });
 
     it('returns `null`', function () {
