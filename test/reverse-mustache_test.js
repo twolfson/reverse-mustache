@@ -100,7 +100,6 @@ describe('A mustache template with an inline conditional token', function () {
     });
 
     it('returns meta information', function () {
-      console.log(this.result);
       expect(this.result).to.not.equal(null);
       expect(this.result.tokensByName).to.deep.equal({world: false});
     });
