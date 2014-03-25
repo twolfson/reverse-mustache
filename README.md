@@ -57,6 +57,7 @@ If the match is successful, it will return an object `context`.
   - We are skipping over other variables which may change later on
 
 ### Functionality
+```
 [x] Reverse text nodes
 [x] Reverse boolean conditionals
 [x] Reverse escaped variables
@@ -67,6 +68,7 @@ If the match is successful, it will return an object `context`.
 [ ] Handle comments
 [ ] Handle partials (should be automatic)
 [ ] Handle alternative start/close tags
+```
 
 ## Examples
 TODO: Add some examples
