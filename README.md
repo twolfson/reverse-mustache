@@ -37,7 +37,39 @@ reverseMustache({
 ## Documentation
 **Foreword**: The current implementation is quick and dirty to see if the project was possible.
 
+`reverse-mustache` exposes the `reverseMustache` function as its `module.exports`.
 
+### `reverseMustache(params)`
+Reverse template output into its original variables
+
+- params `Object`, container for function parameters
+  - template `String`, template used to generate output
+  - content `String`, output to reverse/extract variables from
+
+**Returns**:
+
+If `reverseMustache` cannot resolve variables that match the output, then it will return `null`.
+
+If the match is successful, it will return an object `context`.
+
+- context `Object`, container for state of template
+  - tokensByName `Object`, key-value pairs representing original data
+  - We are skipping over other variables which may change later on
+
+### Functionality
+[x] Reverse text nodes
+[x] Reverse boolean conditionals
+[x] Reverse escaped variables
+[ ] Reverse escaped variables (with escaping reversal)
+[ ] Reverse for loops
+[ ] Reverse negative conditionals
+[ ] Reverse nested objects/nested paths
+[ ] Handle comments
+[ ] Handle partials (should be automatic)
+[ ] Handle alternative start/close tags
+
+## Examples
+TODO: Add some examples
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint via [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
