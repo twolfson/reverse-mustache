@@ -7,6 +7,16 @@ This was created to explore the untapped reverse templating domain. It was initi
 [mustache]: https://github.com/janl/mustache.js
 [extract-values]: http://www.laktek.com/2012/10/04/extract-values-from-a-string/
 
+```js
+reverseMustache({
+  template: 'hello {{#place}}world{{/place}}',
+  content: 'hello world'
+});
+/*
+{tokensByName: {world: true}}
+*/
+```
+
 ## Getting Started
 Install the module with: `npm install reverse-mustache`
 
@@ -16,10 +26,9 @@ reverse_mustache.awesome(); // "awesome"
 ```
 
 ## Documentation
-_(Coming soon)_
+**Foreword**: The current implementation is quick and dirty to see if the project was possible.
 
-## Examples
-_(Coming soon)_
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint via [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
