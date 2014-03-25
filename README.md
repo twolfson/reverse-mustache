@@ -1,6 +1,11 @@
 # reverse-mustache [![Build status](https://travis-ci.org/twolfson/reverse-mustache.png?branch=master)](https://travis-ci.org/twolfson/reverse-mustache)
 
-Reverse templating library for mustache
+Reverse templating library for [mustache][], generating variables from a template's output
+
+This was created to explore the untapped reverse templating domain. It was initially inspired by [@laktek's `extract-values` library][extract-values].
+
+[mustache]: https://github.com/janl/mustache.js
+[extract-values]: http://www.laktek.com/2012/10/04/extract-values-from-a-string/
 
 ## Getting Started
 Install the module with: `npm install reverse-mustache`
