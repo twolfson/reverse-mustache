@@ -25,7 +25,12 @@ reverseMustache({
   content: 'hello world'
 });
 /*
-{tokensByName: {world: true}}
+{
+  originalContent: 'hello world',
+  remainingContent: '',
+  completedContent: 'hello world',
+  tokensByName: {place: true}
+}
 */
 ```
 
