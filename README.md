@@ -62,6 +62,7 @@ If the match is successful, it will return an object `context`.
 [x] Reverse boolean conditionals
 [x] Reverse escaped variables
 [ ] Reverse escaped variables (with escaping reversal)
+[ ] Reverse unescaped variables
 [ ] Reverse for loops
 [ ] Reverse negative conditionals
 [ ] Reverse nested objects/nested paths
@@ -71,7 +72,18 @@ If the match is successful, it will return an object `context`.
 ```
 
 ## Examples
-TODO: Add some examples
+Below are some examples of using `reverseMustache`
+
+### Variables
+This is an example where we have a variable in our template
+
+```
+reverseMustache({
+  template: 'hello {{place}}',
+  content: 'hello moon'
+});
+// {tokensByName: {place: 'moon'}}
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint via [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
