@@ -95,7 +95,7 @@ describe('A mustache template with an inline conditional token', function () {
   // DEV: This is the first instance of where we need to backtrack
   describe.only('when reversed with matching content (boolean false)', function () {
     reverseMustacheUtils.save({
-      template: 'hello {{#world}}there{{/world}} moon',
+      template: 'hello {{#world}} there{{/world}}moon',
       content: 'hello moon'
     });
 
