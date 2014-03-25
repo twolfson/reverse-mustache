@@ -116,3 +116,28 @@ describe('A mustache template with an inline conditional token', function () {
     });
   });
 });
+
+describe('A mustache template with a variable', function () {
+  describe.only('when reversed with matching content', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{place}}',
+      content: 'hello moon'
+    });
+
+    it('returns meta information', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({place: 'moon'});
+    });
+  });
+
+  describe('when reversed with non-matching content', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{place}}',
+      content: 'hello moon'
+    });
+
+    it('returns `null`', function () {
+      expect(this.result).to.equal(null);
+    });
+  });
+});
