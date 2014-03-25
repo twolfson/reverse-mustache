@@ -141,3 +141,40 @@ describe('A mustache template with a variable', function () {
     });
   });
 });
+
+describe('A mustache template with an inline variable', function () {
+  describe('when reversed with matching content', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{where}}moon',
+      content: 'hello there moon'
+    });
+
+    it('returns meta information', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({where: 'there '});
+    });
+  });
+
+  describe('when reversed with matching content (empty string var)', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{where}}moon',
+      content: 'hello moon'
+    });
+
+    it('returns meta information', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({where: ''});
+    });
+  });
+
+  describe('when reversed with non-matching content', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{where}}moon',
+      content: 'hello mooon'
+    });
+
+    it('returns `null`', function () {
+      expect(this.result).to.equal(null);
+    });
+  });
+});
