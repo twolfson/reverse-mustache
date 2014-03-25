@@ -12,17 +12,21 @@ reverseMustache({
   template: 'hello {{#place}}world{{/place}}',
   content: 'hello world'
 });
-/*
-{tokensByName: {world: true}}
-*/
+// {tokensByName: {world: true}}
 ```
 
 ## Getting Started
 Install the module with: `npm install reverse-mustache`
 
 ```javascript
-var reverse_mustache = require('reverse-mustache');
-reverse_mustache.awesome(); // "awesome"
+var reverseMustache = require('reverse-mustache');
+reverseMustache({
+  template: 'hello {{#place}}world{{/place}}',
+  content: 'hello world'
+});
+/*
+{tokensByName: {world: true}}
+*/
 ```
 
 ## Documentation
