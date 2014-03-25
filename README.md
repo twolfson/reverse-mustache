@@ -77,7 +77,7 @@ Below are some examples of using `reverseMustache`
 ### Variables
 This is an example where we have a variable in our template
 
-```
+```js
 reverseMustache({
   template: 'hello {{place}}',
   content: 'hello moon'
