@@ -61,8 +61,7 @@ If the match is successful, it will return an object `context`.
 [x] Reverse text nodes
 [x] Reverse boolean conditionals
 [x] Reverse escaped variables
-[ ] Reverse escaped variables (with escaping reversal)
-[ ] Reverse unescaped variables
+[x] Reverse unescaped variables
 [ ] Reverse for loops
 [ ] Reverse negative conditionals
 [ ] Reverse nested objects/nested paths
