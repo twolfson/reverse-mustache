@@ -213,3 +213,18 @@ describe('A mustache template with an unescaped variable', function () {
     });
   });
 });
+
+describe('A mustache template with an array loop', function () {
+  describe('when reversed with matching content', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{#places}}moon{{/places}}',
+      content: 'hello moon moon'
+    });
+
+    it('returns meta information', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.have.property('place');
+      expect(this.result.tokensByName.place).to.have.property('length', 2);
+    });
+  });
+});
