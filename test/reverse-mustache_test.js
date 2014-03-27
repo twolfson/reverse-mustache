@@ -223,8 +223,21 @@ describe.only('A mustache template with an array loop', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.have.property('place');
-      expect(this.result.tokensByName.place).to.have.property('length', 2);
+      expect(this.result.tokensByName).to.have.property('places');
+      expect(this.result.tokensByName.places).to.have.property('length', 2);
+    });
+  });
+
+  describe.skip('when reversed with too greedy matching content', function () {
+    reverseMustacheUtils.save({
+      template: 'hello{{#places}} moon{{/places}} moon',
+      content: 'hello moon moon mon'
+    });
+
+    it('returns meta information', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.have.property('places');
+      expect(this.result.tokensByName.places).to.have.property('length', 2);
     });
   });
 });
