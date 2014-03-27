@@ -228,10 +228,10 @@ describe.only('A mustache template with an array loop', function () {
     });
   });
 
-  describe.skip('when reversed with too greedy matching content', function () {
+  describe.only('when reversed with too greedy matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello{{#places}} moon{{/places}} moon',
-      content: 'hello moon moon mon'
+      content: 'hello moon moon moon'
     });
 
     it('returns meta information', function () {
