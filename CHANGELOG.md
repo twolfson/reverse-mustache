@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+0.3.1 - Added safety assertion to all tests
+
 0.3.0 - Added variable unescaping
 
 0.2.1 - Added documentation for `reverse-mustache`
