@@ -214,7 +214,7 @@ describe('A mustache template with an unescaped variable', function () {
   });
 });
 
-describe.only('A mustache template with an array loop', function () {
+describe('A mustache template with an array loop', function () {
   describe('when reversed with matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello{{#places}} moon{{/places}}',
@@ -228,7 +228,7 @@ describe.only('A mustache template with an array loop', function () {
     });
   });
 
-  describe.only('when reversed with too greedy matching content', function () {
+  describe('when reversed with too greedy matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello{{#places}} moon{{/places}} moon',
       content: 'hello moon moon moon'
