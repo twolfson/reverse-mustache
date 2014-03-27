@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+0.4.0 - Added support for loops
+
 0.3.1 - Added safety assertion to all tests
 
 0.3.0 - Added variable unescaping
