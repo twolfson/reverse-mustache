@@ -1,5 +1,6 @@
 // Load in library
 var expect = require('chai').expect;
+var mustache = require('mustache');
 var reverseMustache = require('../');
 
 // Define helper utilities
@@ -7,6 +8,10 @@ var reverseMustacheUtils = {
   save: function (params) {
     before(function callReverseMustache () {
       this.result = reverseMustache(params);
+
+      // For behavioral sanity, verify `result + template` matches `content`
+      var actualOutput = mustache.render(params.template, this.result);
+      expect(actualOutput).to.equal(params.content);
     });
     after(function cleanupResult () {
       delete this.result;
