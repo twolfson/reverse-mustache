@@ -10,8 +10,10 @@ var reverseMustacheUtils = {
       this.result = reverseMustache(params);
 
       // For behavioral sanity, verify `result + template` matches `content`
-      var actualOutput = mustache.render(params.template, this.result);
-      expect(actualOutput).to.equal(params.content);
+      if (this.result) {
+        var actualOutput = mustache.render(params.template, this.result.tokensByName);
+        expect(actualOutput).to.equal(params.content);
+      }
     });
     after(function cleanupResult () {
       delete this.result;
