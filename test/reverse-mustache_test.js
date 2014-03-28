@@ -244,7 +244,7 @@ describe('A mustache template with an array loop', function () {
 
 // DEV: These test that we attempt to use the current value instead of overwriting it
 describe('A mustache template with re-used variables', function () {
-  describe('when reversed with contradicting content', function () {
+  describe.only('when reversed with contradicting content', function () {
     reverseMustacheUtils.save({
       template: 'hello {{place}} {{place}}',
       content: 'hello world moon'
