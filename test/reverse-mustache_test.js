@@ -241,3 +241,16 @@ describe('A mustache template with an array loop', function () {
     });
   });
 });
+
+describe('A mustache template with re-used variables', function () {
+  describe('when reversed with contradicting content', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{place}} {{place}}',
+      content: 'hello world moon'
+    });
+
+    it('recognizes the contradiction and does not match', function () {
+      expect(this.result).to.equal(null);
+    });
+  });
+});
