@@ -244,7 +244,7 @@ describe('A mustache template with an array loop', function () {
 
 // DEV: These test that we attempt to use the current value instead of overwriting it
 describe('A mustache template with re-used variables', function () {
-  describe.only('when reversed with contradicting content', function () {
+  describe.skip('when reversed with contradicting content', function () {
     reverseMustacheUtils.save({
       template: 'hello {{place}} {{place}}',
       content: 'hello world moon'
@@ -255,10 +255,22 @@ describe('A mustache template with re-used variables', function () {
     });
   });
 
-  describe.skip('when reversed with contradicting conditionals', function () {
+  describe.only('when reversed with contradicting conditionals', function () {
     reverseMustacheUtils.save({
       template: 'hello{{#place}} world{{/place}}{{#place}} moon{{/place}}',
       content: 'hello world moon'
+    });
+
+    it('recognizes the contradiction and does not match', function () {
+      expect(this.result).to.equal(null);
+    });
+  });
+
+  describe.skip('when reversed with a contradicting inner loop', function () {
+    // Since we double loop, the only valid  `world` counts are squares
+    reverseMustacheUtils.save({
+      template: 'hello{{#places}}{{#places}} world{{/places}}{{/places}}',
+      content: 'hello world world'
     });
 
     it('recognizes the contradiction and does not match', function () {
