@@ -49,7 +49,7 @@ describe('A mustache template without any mustache tokens', function () {
   });
 });
 
-describe('A mustache template with a terminating conditional token', function () {
+describe.only('A mustache template with a terminating conditional token', function () {
   describe('when reversed with matching content (boolean true)', function () {
     reverseMustacheUtils.save({
       template: 'hello {{#world}}moon{{/world}}',
@@ -124,7 +124,7 @@ describe('A mustache template with an inline conditional token', function () {
   });
 });
 
-describe.only('A mustache template with a variable', function () {
+describe('A mustache template with a variable', function () {
   describe('when reversed with matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello {{place}}',
