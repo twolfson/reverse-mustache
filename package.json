@@ -1,7 +1,7 @@
 {
   "name": "reverse-mustache",
   "description": "Reverse templating library for mustache, generating variables from a template's output",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "homepage": "https://github.com/twolfson/reverse-mustache",
   "author": {
     "name": "Todd Wolfson",

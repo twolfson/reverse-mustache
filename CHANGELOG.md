@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+0.7.0 - Added support for variable re-use and preventing contradictions
+
 0.6.0 - Moved from content to context inside of recursive search
 
 0.5.0 - Removed duplicate logic within loops
