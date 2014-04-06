@@ -24,7 +24,7 @@ var reverseMustacheUtils = {
 // TODO: Embrace the same flat file mantra as mustache.js
 // TODO: We should be able to reverse the mustache test suite
 
-describe.only('A mustache template without any mustache tokens', function () {
+describe('A mustache template without any mustache tokens', function () {
   describe('when reversed with matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello moon',
@@ -124,7 +124,7 @@ describe('A mustache template with an inline conditional token', function () {
   });
 });
 
-describe('A mustache template with a variable', function () {
+describe.only('A mustache template with a variable', function () {
   describe('when reversed with matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello {{place}}',
