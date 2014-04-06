@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+0.6.0 - Moved from content to context inside of recursive search
+
 0.5.0 - Removed duplicate logic within loops
 
 0.4.1 - Updated comments to seem less scattered
