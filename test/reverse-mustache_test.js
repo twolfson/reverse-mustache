@@ -242,6 +242,7 @@ describe('A mustache template with an array loop', function () {
   });
 });
 
+// TODO: Replicate test with functional repetitive counterparts
 // DEV: These test that we attempt to use the current value instead of overwriting it
 describe('A mustache template with re-used variables', function () {
   describe.only('when reversed with contradicting content', function () {
