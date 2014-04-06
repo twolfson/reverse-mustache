@@ -63,6 +63,7 @@ If the match is successful, it will return an object `context`.
 [x] Reverse escaped variables
 [x] Reverse unescaped variables
 [x] Reverse for loops
+[x] Re-use variables / prevent contradictions
 [ ] Reverse negative conditionals
 [ ] Reverse nested objects/nested paths
 [ ] Handle comments
