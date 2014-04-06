@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+0.5.0 - Removed duplicate logic within loops
+
 0.4.1 - Updated comments to seem less scattered
 
 0.4.0 - Added support for loops
