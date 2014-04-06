@@ -257,7 +257,7 @@ describe('A mustache template with re-used variables', function () {
 
   describe.only('when reversed with contradicting conditionals', function () {
     reverseMustacheUtils.save({
-      template: 'hello{{#place}} world{{/place}}{{#place}} moon{{/place}}',
+      template: 'hello{{#place}} world{{/place}}{{#place}} world{{/place}}',
       content: 'hello world moon'
     });
 
