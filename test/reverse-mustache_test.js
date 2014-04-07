@@ -3,7 +3,10 @@ var expect = require('chai').expect;
 var mustache = require('mustache');
 var reverseMustache = require('../');
 
-console.log('wat', mustache.render('{{place.name}}'));
+console.log('wat', mustache.render('{{place.name}}', {place: {name: 'world'}}));
+console.log('wat', mustache.render('{{#place}}{{name}}{{/place}}', {place: {name: 'earth'}}));
+console.log('wat', mustache.render('{{#place}}{{place.name}}{{/place}}', {place: {name: 'earth'}}));
+console.log('wat', mustache.render('{{#place}}{{.}}{{/place}}', {place: 'earth'}));
 
 // Define helper utilities
 var reverseMustacheUtils = {
