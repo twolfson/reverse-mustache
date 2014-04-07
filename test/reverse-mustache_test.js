@@ -242,7 +242,7 @@ describe('A mustache template with an array loop', function () {
   });
 });
 
-describe.only('A mustache template with object variables', function () {
+describe('A mustache template with object variables', function () {
   describe('when reversed', function () {
     reverseMustacheUtils.save({
       template: '{{place.name}}',
@@ -256,11 +256,11 @@ describe.only('A mustache template with object variables', function () {
   });
 });
 
-describe.skip('A mustache template with variables in its loop', function () {
-  describe('using the loop variables context', function () {
+describe('A mustache template with variables in its loop', function () {
+  describe.only('using the outer context', function () {
     describe('when reversed', function () {
       reverseMustacheUtils.save({
-        template: '{{#place}}{{name}}{{/place}}',
+        template: '{{#place}}{{place.name}}{{/place}}',
         content: 'world'
       });
 
@@ -271,10 +271,10 @@ describe.skip('A mustache template with variables in its loop', function () {
     });
   });
 
-  describe('using the outer context', function () {
+  describe('using the loop variables context', function () {
     describe('when reversed', function () {
       reverseMustacheUtils.save({
-        template: '{{#place}}{{place.name}}{{/place}}',
+        template: '{{#place}}{{name}}{{/place}}',
         content: 'world'
       });
 
