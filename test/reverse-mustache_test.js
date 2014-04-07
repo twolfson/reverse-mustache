@@ -3,6 +3,8 @@ var expect = require('chai').expect;
 var mustache = require('mustache');
 var reverseMustache = require('../');
 
+console.log('wat', mustache.render('{{place.name}}'));
+
 // Define helper utilities
 var reverseMustacheUtils = {
   save: function (params) {
