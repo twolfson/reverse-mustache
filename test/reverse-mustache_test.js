@@ -3,11 +3,6 @@ var expect = require('chai').expect;
 var mustache = require('mustache');
 var reverseMustache = require('../');
 
-console.log('wat', mustache.render('{{place.name}}', {place: {name: 'world'}}));
-console.log('wat', mustache.render('{{#place}}{{name}}{{/place}}', {place: {name: 'earth'}}));
-console.log('wat', mustache.render('{{#place}}{{place.name}}{{/place}}', {place: {name: 'earth'}}));
-console.log('wat', mustache.render('{{#place}}{{.}}{{/place}}', {place: 'earth'}));
-
 // Define helper utilities
 var reverseMustacheUtils = {
   save: function (params) {
@@ -244,6 +239,24 @@ describe('A mustache template with an array loop', function () {
       expect(this.result.tokensByName).to.have.property('places');
       expect(this.result.tokensByName.places).to.have.property('length', 2);
     });
+  });
+});
+
+describe('A mustache template with object variables', function () {
+  console.log('wat', mustache.render('{{place.name}}', {place: {name: 'world'}}));
+});
+
+describe('A mustache template with variables in its loop', function () {
+  describe('using the loop variables context', function () {
+    console.log('wat', mustache.render('{{#place}}{{name}}{{/place}}', {place: {name: 'earth'}}));
+  });
+
+  describe('using the outer context', function () {
+    console.log('wat', mustache.render('{{#place}}{{place.name}}{{/place}}', {place: {name: 'earth'}}));
+  });
+
+  describe('using the dot notation context', function () {
+    console.log('wat', mustache.render('{{#place}}{{.}}{{/place}}', {place: 'earth'}));
   });
 });
 
