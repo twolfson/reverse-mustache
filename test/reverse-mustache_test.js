@@ -243,20 +243,60 @@ describe('A mustache template with an array loop', function () {
 });
 
 describe('A mustache template with object variables', function () {
-  console.log('wat', mustache.render('{{place.name}}', {place: {name: 'world'}}));
+  describe('when reversed', function () {
+    reverseMustacheUtils.save({
+      template: '{{place.name}}',
+      content: 'world'
+    });
+
+    it('returns the original input', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
+    });
+  });
 });
 
 describe('A mustache template with variables in its loop', function () {
   describe('using the loop variables context', function () {
-    console.log('wat', mustache.render('{{#place}}{{name}}{{/place}}', {place: {name: 'earth'}}));
+    describe('when reversed', function () {
+      reverseMustacheUtils.save({
+        template: '{{#place}}{{name}}{{/place}}',
+        content: 'world'
+      });
+
+      it('returns the original input', function () {
+        expect(this.result).to.not.equal(null);
+        expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
+      });
+    });
   });
 
   describe('using the outer context', function () {
-    console.log('wat', mustache.render('{{#place}}{{place.name}}{{/place}}', {place: {name: 'earth'}}));
+    describe('when reversed', function () {
+      reverseMustacheUtils.save({
+        template: '{{#place}}{{place.name}}{{/place}}',
+        content: 'world'
+      });
+
+      it('returns the original input', function () {
+        expect(this.result).to.not.equal(null);
+        expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
+      });
+    });
   });
 
   describe('using the dot notation context', function () {
-    console.log('wat', mustache.render('{{#place}}{{.}}{{/place}}', {place: 'earth'}));
+    describe('when reversed', function () {
+      reverseMustacheUtils.save({
+        template: '{{#place}}{{.}}{{/place}}',
+        content: 'world'
+      });
+
+      it('returns the original input', function () {
+        expect(this.result).to.not.equal(null);
+        expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+      });
+    });
   });
 });
 
