@@ -304,6 +304,18 @@ describe('A mustache template with variables in its loop', function () {
   });
 });
 
+describe.only('Searching for outcomes of greedy loops', function () {
+  reverseMustacheUtils.save({
+    template: '{{#place}}{{.}}{{/place}} world',
+    content: 'world world'
+  });
+
+  it('returns the original input', function () {
+    expect(this.result).to.not.equal(null);
+    expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+  });
+});
+
 describe('A template using both loop and inline variables', function () {
   describe('when loop precedes inline is reversed', function () {
     reverseMustacheUtils.save({
