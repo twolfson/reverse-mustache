@@ -304,15 +304,17 @@ describe('A mustache template with variables in its loop', function () {
   });
 });
 
-describe.only('Searching for outcomes of greedy loops', function () {
-  reverseMustacheUtils.save({
-    template: '{{#place}}{{.}}{{/place}} world',
-    content: 'world world'
-  });
+describe.only('A non-terminal loop with variables', function () {
+  describe('when reversed', function () {
+    reverseMustacheUtils.save({
+      template: '{{#place}}{{name}}{{/place}} world',
+      content: 'world world'
+    });
 
-  it('returns the original input', function () {
-    expect(this.result).to.not.equal(null);
-    expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+    it('returns the original input', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
+    });
   });
 });
 
