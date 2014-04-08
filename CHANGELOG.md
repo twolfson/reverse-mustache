@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+0.8.1 - Updated progress list on README
+
 0.8.0 - Added support for nested context in loops
 
 0.7.0 - Added support for variable re-use and preventing contradictions
