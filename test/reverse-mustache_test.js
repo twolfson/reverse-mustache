@@ -289,7 +289,7 @@ describe('A mustache template with variables in its loop', function () {
     });
   });
 
-  describe.only('using the dot notation context', function () {
+  describe('using the dot notation context', function () {
     describe('when reversed', function () {
       reverseMustacheUtils.save({
         template: '{{#place}}{{.}}{{/place}}',
