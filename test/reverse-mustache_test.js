@@ -304,6 +304,32 @@ describe('A mustache template with variables in its loop', function () {
   });
 });
 
+describe('A template using both loop and inline variables', function () {
+  describe('when loop precedes inline is reversed', function () {
+    reverseMustacheUtils.save({
+      template: '{{#place}}{{.}}{{/place}} {{place}}',
+      content: 'world world'
+    });
+
+    it('returns the original input', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+    });
+  });
+
+  describe('when inline precedes loop is reversed', function () {
+    reverseMustacheUtils.save({
+      template: '{{place}} {{#place}}{{.}}{{/place}}',
+      content: 'world world'
+    });
+
+    it('returns the original input', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+    });
+  });
+});
+
 // DEV: These test that we attempt to use the current value instead of overwriting it
 describe('A mustache template with re-used variables', function () {
   describe('when reversed with agreeing content', function () {
