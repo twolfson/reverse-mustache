@@ -342,18 +342,6 @@ describe('A template using both loop and inline variables', function () {
       expect(this.result.tokensByName).to.deep.equal({place: 'world'});
     });
   });
-
-  describe('when inline precedes loop followed by constant is reversed', function () {
-    reverseMustacheUtils.save({
-      template: '{{place}} {{#place}}{{.}}{{/place}} world',
-      content: 'world world'
-    });
-
-    it('returns the original input', function () {
-      expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({place: 'world'});
-    });
-  });
 });
 
 // DEV: These test that we attempt to use the current value instead of overwriting it
