@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+0.9.0 - Added backoff for loops to handle overly greedy in-loop variables
+
 0.8.1 - Updated progress list on README
 
 0.8.0 - Added support for nested context in loops
