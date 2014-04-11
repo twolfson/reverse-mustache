@@ -304,7 +304,7 @@ describe('A mustache template with variables in its loop', function () {
   });
 });
 
-describe.only('A non-terminal loop with variables', function () {
+describe('A non-terminal loop with variables', function () {
   describe('when reversed', function () {
     reverseMustacheUtils.save({
       template: '{{#place}}{{name}}{{/place}} world',
