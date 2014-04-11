@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+0.10.0 - Repaired backoff for loops that are working with established variables
+
 0.9.0 - Added backoff for loops to handle overly greedy in-loop variables
 
 0.8.1 - Updated progress list on README
