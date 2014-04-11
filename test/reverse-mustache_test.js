@@ -307,13 +307,13 @@ describe('A mustache template with variables in its loop', function () {
 describe.only('A non-terminal loop with variables', function () {
   describe('when reversed', function () {
     reverseMustacheUtils.save({
-      template: '{{#places}}{{name}}{{/places}} world',
+      template: '{{#place}}{{name}}{{/place}} world',
       content: 'world world'
     });
 
     it('returns the original input', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({places: [{name: 'world'}]});
+      expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
     });
   });
 });
