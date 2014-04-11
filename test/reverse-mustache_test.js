@@ -355,6 +355,19 @@ describe('A template using both loop and inline variables', function () {
       expect(this.result.tokensByName).to.deep.equal({place: 'world'});
     });
   });
+
+  // TODO: Enable and fix this
+  describe.skip('when an inline and loop share the same object but have different properties', function () {
+    reverseMustacheUtils.save({
+      template: '{{place.name}} {{#place}}{{id}}{{/place}}',
+      content: 'world 1234'
+    });
+
+    it('extends the content', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result.tokensByName).to.deep.equal({place: {name: 'world', id: '1234'}});
+    });
+  });
 });
 
 // DEV: These test that we attempt to use the current value instead of overwriting it
