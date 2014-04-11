@@ -343,10 +343,11 @@ describe('A template using both loop and inline variables', function () {
     });
   });
 
-  describe('when inline precedes loop followed by constant is reversed', function () {
+  // DEV: This tests that we can backoff with pre-defined variables
+  describe.only('when inline precedes loop followed by constant is reversed', function () {
     reverseMustacheUtils.save({
       template: '{{place}} {{#place}}{{.}}{{/place}} world',
-      content: 'world world'
+      content: 'world world world'
     });
 
     it('returns the original input', function () {
