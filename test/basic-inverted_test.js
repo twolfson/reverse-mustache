@@ -39,3 +39,7 @@ describe.only('A mustache template with an empty token', function () {
 });
 
 // TODO: Test nested content
+
+// TODO: We probably need some tests with inverted and other scenarios
+
+// TODO: We need to test variable re-use
