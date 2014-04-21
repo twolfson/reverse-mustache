@@ -1,8 +1,8 @@
 var expect = require('chai').expect;
 var reverseMustacheUtils = require('./utils/reverse-mustache');
 
-describe.only('A mustache template with an empty token', function () {
-  describe('when reversed with matching content (boolean false)', function () {
+describe('A mustache template with an empty token', function () {
+  describe.only('when reversed with matching content (boolean false)', function () {
     reverseMustacheUtils.save({
       template: 'hello{{^world}} moon{{/world}}',
       content: 'hello'
@@ -14,7 +14,7 @@ describe.only('A mustache template with an empty token', function () {
     });
   });
 
-  describe('when reversed with matching content (boolean true)', function () {
+  describe.skip('when reversed with matching content (boolean true)', function () {
     reverseMustacheUtils.save({
       template: 'hello{{^world}} moon{{/world}}',
       content: 'hello moon'
@@ -26,7 +26,7 @@ describe.only('A mustache template with an empty token', function () {
     });
   });
 
-  describe('when reversed with non-matching content', function () {
+  describe.skip('when reversed with non-matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello {{^world}}moon{{/world}}',
       content: 'hello there'
@@ -43,3 +43,5 @@ describe.only('A mustache template with an empty token', function () {
 // TODO: We probably need some tests with inverted and other scenarios
 
 // TODO: We need to test variable re-use
+
+// TODO: Need test for backoff (when we are in false and it is too greedy)
