@@ -11,7 +11,7 @@ var reverseMustacheUtils = {
 
       // For behavioral sanity, verify `result + template` matches `content`
       if (this.result) {
-        var actualOutput = mustache.render(params.template, this.result.tokensByName);
+        var actualOutput = mustache.render(params.template, this.result);
         expect(actualOutput).to.equal(params.content);
       }
     });
@@ -58,7 +58,7 @@ describe('A mustache template with a terminating conditional token', function ()
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({world: true});
+      expect(this.result).to.deep.equal({world: true});
     });
   });
 
@@ -70,7 +70,7 @@ describe('A mustache template with a terminating conditional token', function ()
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({world: false});
+      expect(this.result).to.deep.equal({world: false});
     });
   });
 
@@ -95,7 +95,7 @@ describe('A mustache template with an inline conditional token', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({world: true});
+      expect(this.result).to.deep.equal({world: true});
     });
   });
 
@@ -108,7 +108,7 @@ describe('A mustache template with an inline conditional token', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({world: false});
+      expect(this.result).to.deep.equal({world: false});
     });
   });
 
@@ -133,7 +133,7 @@ describe('A mustache template with a variable', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({place: 'moon'});
+      expect(this.result).to.deep.equal({place: 'moon'});
     });
   });
 
@@ -158,7 +158,7 @@ describe('A mustache template with an inline variable', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({where: 'there '});
+      expect(this.result).to.deep.equal({where: 'there '});
     });
   });
 
@@ -170,7 +170,7 @@ describe('A mustache template with an inline variable', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({where: ''});
+      expect(this.result).to.deep.equal({where: ''});
     });
   });
 
@@ -195,7 +195,7 @@ describe('A mustache template with an escaped variable', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({operator: '>'});
+      expect(this.result).to.deep.equal({operator: '>'});
     });
   });
 });
@@ -209,7 +209,7 @@ describe('A mustache template with an unescaped variable', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({operator: '&gt;'});
+      expect(this.result).to.deep.equal({operator: '&gt;'});
     });
   });
 });
@@ -223,8 +223,8 @@ describe('A mustache template with an array loop', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.have.property('places');
-      expect(this.result.tokensByName.places).to.have.property('length', 2);
+      expect(this.result).to.have.property('places');
+      expect(this.result.places).to.have.property('length', 2);
     });
   });
 
@@ -236,8 +236,8 @@ describe('A mustache template with an array loop', function () {
 
     it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.have.property('places');
-      expect(this.result.tokensByName.places).to.have.property('length', 2);
+      expect(this.result).to.have.property('places');
+      expect(this.result.places).to.have.property('length', 2);
     });
   });
 });
@@ -251,7 +251,7 @@ describe('A mustache template with object variables', function () {
 
     it('returns the original input', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
+      expect(this.result).to.deep.equal({place: {name: 'world'}});
     });
   });
 });
@@ -270,7 +270,7 @@ describe('A mustache template with variables in its loop', function () {
 
       it('returns the original input', function () {
         expect(this.result).to.not.equal(null);
-        expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
+        expect(this.result).to.deep.equal({place: {name: 'world'}});
       });
     });
   });
@@ -284,7 +284,7 @@ describe('A mustache template with variables in its loop', function () {
 
       it('returns the original input', function () {
         expect(this.result).to.not.equal(null);
-        expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
+        expect(this.result).to.deep.equal({place: {name: 'world'}});
       });
     });
   });
@@ -298,7 +298,7 @@ describe('A mustache template with variables in its loop', function () {
 
       it('returns the original input', function () {
         expect(this.result).to.not.equal(null);
-        expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+        expect(this.result).to.deep.equal({place: 'world'});
       });
     });
   });
@@ -313,7 +313,7 @@ describe('A non-terminal loop with variables', function () {
 
     it('returns the original input', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({place: {name: 'world'}});
+      expect(this.result).to.deep.equal({place: {name: 'world'}});
     });
   });
 });
@@ -327,7 +327,7 @@ describe('A template using both loop and inline variables', function () {
 
     it('returns the original input', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+      expect(this.result).to.deep.equal({place: 'world'});
     });
   });
 
@@ -339,7 +339,7 @@ describe('A template using both loop and inline variables', function () {
 
     it('returns the original input', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+      expect(this.result).to.deep.equal({place: 'world'});
     });
   });
 
@@ -352,7 +352,7 @@ describe('A template using both loop and inline variables', function () {
 
     it('returns the original input', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({place: 'world'});
+      expect(this.result).to.deep.equal({place: 'world'});
     });
   });
 
@@ -365,7 +365,7 @@ describe('A template using both loop and inline variables', function () {
 
     it('extends the content', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.deep.equal({place: {name: 'world', id: '1234'}});
+      expect(this.result).to.deep.equal({place: {name: 'world', id: '1234'}});
     });
   });
 });
@@ -380,7 +380,7 @@ describe('A mustache template with re-used variables', function () {
 
     it('recognizes the variable and re-uses it during matching', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.have.property('place', 'world');
+      expect(this.result).to.have.property('place', 'world');
     });
   });
 
@@ -403,7 +403,7 @@ describe('A mustache template with re-used variables', function () {
 
     it('matches the variable and re-uses it during matching', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.have.property('place', true);
+      expect(this.result).to.have.property('place', true);
     });
   });
 
@@ -441,8 +441,8 @@ describe('A mustache template with re-used variables', function () {
 
     it('recognizes the contradiction and does not match', function () {
       expect(this.result).to.not.equal(null);
-      expect(this.result.tokensByName).to.have.property('places');
-      expect(this.result.tokensByName.places).to.have.property('length', 2);
+      expect(this.result).to.have.property('places');
+      expect(this.result.places).to.have.property('length', 2);
     });
   });
 });
