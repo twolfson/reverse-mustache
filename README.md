@@ -12,7 +12,7 @@ reverseMustache({
   template: 'hello {{#place}}world{{/place}}',
   content: 'hello world'
 });
-// {tokensByName: {world: true}}
+// {world: true}
 ```
 
 ## Getting Started
@@ -26,10 +26,7 @@ reverseMustache({
 });
 /*
 {
-  originalContent: 'hello world',
-  remainingContent: '',
-  completedContent: 'hello world',
-  tokensByName: {place: true}
+  place: true
 }
 */
 ```
@@ -82,7 +79,7 @@ reverseMustache({
   template: 'hello {{place}}',
   content: 'hello moon'
 });
-// {tokensByName: {place: 'moon'}}
+// {place: 'moon'}
 ```
 
 ## Contributing
