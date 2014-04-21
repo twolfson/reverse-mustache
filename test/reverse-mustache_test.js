@@ -1,25 +1,6 @@
 // Load in library
 var expect = require('chai').expect;
-var mustache = require('mustache');
-var reverseMustache = require('../');
-
-// Define helper utilities
-var reverseMustacheUtils = {
-  save: function (params) {
-    before(function callReverseMustache () {
-      this.result = reverseMustache(params);
-
-      // For behavioral sanity, verify `result + template` matches `content`
-      if (this.result) {
-        var actualOutput = mustache.render(params.template, this.result);
-        expect(actualOutput).to.equal(params.content);
-      }
-    });
-    after(function cleanupResult () {
-      delete this.result;
-    });
-  }
-};
+var reverseMustacheUtils = require('./utils/reverse-mustache');
 
 // TODO: Embrace the same flat file mantra as mustache.js
 // TODO: We should be able to reverse the mustache test suite
