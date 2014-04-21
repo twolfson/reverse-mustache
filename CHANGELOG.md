@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.0.0 - Refactored `lib`/`test` and moved output format to `tokensByName` only
+
 0.10.0 - Repaired backoff for loops that are working with established variables
 
 0.9.0 - Added backoff for loops to handle overly greedy in-loop variables
