@@ -47,6 +47,21 @@ describe('A mustache template with a partial token', function () {
     });
   });
 
+  describe('when reversed with loop', function () {
+    reverseMustacheUtils.save({
+      template: 'hello{{> places}}',
+      content: 'hello moon moon',
+      partials: {
+        places: '{{#places}} moon{{/places}}'
+      }
+    });
+
+    it.only('returns meta information', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result).to.deep.equal({places: [true, true]});
+    });
+  });
+
   describe('when reversed in a loop and inner variable', function () {
     reverseMustacheUtils.save({
       template: 'hello {{#place}}{{> name}}{{/place}}',
