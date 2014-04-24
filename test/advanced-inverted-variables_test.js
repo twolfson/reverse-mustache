@@ -43,4 +43,28 @@ describe('A mustache template with an inverted token', function () {
   });
 });
 
-// TODO: We need to test variable re-use
+describe('A mustache template with an inverted token and an existing variable', function () {
+  describe('when the inverted token comes first', function () {
+    reverseMustacheUtils.save({
+      template: '{{^empty}}empty{{/empty}} string is {{empty}}empty',
+      content: 'empty string is empty'
+    });
+
+    it('the inverted token uses the variable', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result).to.deep.equal({empty: ''});
+    });
+  });
+
+  describe('when the inverted token comes last', function () {
+    reverseMustacheUtils.save({
+      template: 'empty{{empty}} string is {{^empty}}empty{{/empty}}',
+      content: 'empty string is empty'
+    });
+
+    it('the existing variable uses it', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result).to.deep.equal({empty: ''});
+    });
+  });
+});
