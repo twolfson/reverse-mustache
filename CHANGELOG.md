@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.2.0 - Added full support for inverted conditionals
+
 1.1.0 - Added basic support for inverted conditionals
 
 1.0.0 - Refactored `lib`/`test` and moved output format to `tokensByName` only
