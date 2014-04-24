@@ -29,4 +29,4 @@ describe('A mustache template with an inverted token', function () {
   });
 });
 
-// TODO: Test nested content
+// TODO: We need to test variable re-use

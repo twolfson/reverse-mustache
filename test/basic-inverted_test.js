@@ -63,9 +63,3 @@ describe('A mustache template with an inline inverted token', function () {
     });
   });
 });
-
-// TODO: We probably need some tests with inverted combined with other scenarios
-
-// TODO: We need to test variable re-use
-
-// TODO: Test backoff with variables in conditional
