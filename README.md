@@ -65,7 +65,7 @@ If the match is successful, it will return an object `context`.
 [x] Reverse inverted conditionals
 [x] Handle comments
 [x] Handle partials
-[ ] Handle alternative start/close tags
+[x] Handle alternative open/close tags
 ```
 
 ## Examples
