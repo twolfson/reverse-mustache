@@ -77,7 +77,7 @@ describe('A mustache template with a partial token', function () {
     });
   });
 
-  describe.only('when reversed with an unrecognized partial in a loop', function () {
+  describe('when reversed with an unrecognized partial in a loop', function () {
     reverseMustacheUtils.save({
       template: 'hello {{#place}}{{> unknown}}{{/place}}',
       content: 'hello moon',
