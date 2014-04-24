@@ -44,7 +44,7 @@ describe('A mustache template with an inverted token', function () {
 });
 
 describe('A mustache template with an inverted token and an existing variable', function () {
-  describe('when the inverted token comes first', function () {
+  describe.skip('when the inverted token comes first', function () {
     reverseMustacheUtils.save({
       template: '{{^empty}}empty{{/empty}} string is {{empty}}empty',
       content: 'empty string is empty'
@@ -56,7 +56,7 @@ describe('A mustache template with an inverted token and an existing variable', 
     });
   });
 
-  describe.only('when the inverted token comes last', function () {
+  describe('when the inverted token comes last', function () {
     reverseMustacheUtils.save({
       template: 'empty{{empty}} string is {{^empty}}empty{{/empty}}',
       content: 'empty string is empty'
@@ -65,6 +65,29 @@ describe('A mustache template with an inverted token and an existing variable', 
     it('the existing variable uses it', function () {
       expect(this.result).to.not.equal(null);
       expect(this.result).to.deep.equal({empty: ''});
+    });
+  });
+
+  describe('when the inverted token is truthy', function () {
+    reverseMustacheUtils.save({
+      template: '{{full}} string is {{^full}}empty{{/full}}full',
+      content: 'full string is full'
+    });
+
+    it('receive metadata', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result).to.deep.equal({full: 'full'});
+    });
+  });
+
+  describe('when the inverted token does not match', function () {
+    reverseMustacheUtils.save({
+      template: '{{full}} string is {{^full}}full{{/full}}',
+      content: 'full string is full'
+    });
+
+    it('we do not match', function () {
+      expect(this.result).to.equal(null);
     });
   });
 });
