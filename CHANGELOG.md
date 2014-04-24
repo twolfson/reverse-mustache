@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.6.1 - Documented partials and alternative tags
+
 1.6.0 - Added support for alternative tags
 
 1.5.0 - Fixed up mustache template caching issues with partials
