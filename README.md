@@ -42,6 +42,10 @@ Reverse template output into its original variables
 - params `Object`, container for function parameters
   - template `String`, template used to generate output
   - content `String`, output to reverse/extract variables from
+  - partials `Object|Function`, container or function that returns partial templates
+      - More info: https://github.com/janl/mustache.js/tree/0.8.1#partials
+  - tags `String[]`, 2 item array containing opening and closing tags
+      - More info: https://github.com/janl/mustache.js/tree/0.8.1#set-delimiter
 
 **Returns**:
 
