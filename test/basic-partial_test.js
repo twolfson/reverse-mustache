@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var reverseMustacheUtils = require('./utils/reverse-mustache');
 
-describe('A mustache template with a partial token', function () {
+describe.only('A mustache template with a partial token', function () {
   describe('when reversed', function () {
     reverseMustacheUtils.save({
       template: 'hello {{> place}}',
