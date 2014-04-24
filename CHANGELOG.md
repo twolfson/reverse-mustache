@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.3.0 - Added support for comments
+
 1.2.0 - Added full support for inverted conditionals
 
 1.1.0 - Added basic support for inverted conditionals
