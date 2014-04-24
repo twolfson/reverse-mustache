@@ -4,7 +4,7 @@ var reverseMustacheUtils = require('./utils/reverse-mustache');
 describe('A mustache template with an inverted token', function () {
   describe('when reversed with an inner variable', function () {
     reverseMustacheUtils.save({
-      template: 'hello{{^world}}{{place}}{{/world}}',
+      template: 'hello {{^world}}{{place}}{{/world}}',
       content: 'hello moon'
     });
 
@@ -18,7 +18,7 @@ describe('A mustache template with an inverted token', function () {
 describe('A mustache template with an inverted token', function () {
   describe('when reversed with with greedy content', function () {
     reverseMustacheUtils.save({
-      template: 'hello{{^world}}{{place}}{{/world}} moon',
+      template: 'hello {{^world}}{{place}}{{/world}} moon',
       content: 'hello moon moon'
     });
 
