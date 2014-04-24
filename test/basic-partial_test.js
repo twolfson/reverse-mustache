@@ -11,13 +11,28 @@ describe('A mustache template with a partial token', function () {
       }
     });
 
-    it.only('returns meta information', function () {
+    it('returns meta information', function () {
       expect(this.result).to.not.equal(null);
       expect(this.result).to.be.an('object');
     });
   });
 
-  describe('when reversed in a loop', function () {
+  describe('when reversed with a variable', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{> place}}',
+      content: 'hello moon',
+      partials: {
+        place: '{{place}}'
+      }
+    });
+
+    it.only('returns meta information', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result).to.deep.equal({place: 'moon'});
+    });
+  });
+
+  describe('when reversed in a loop and inner variable', function () {
     reverseMustacheUtils.save({
       template: 'hello {{#place}}{{> name}}{{/place}}',
       content: 'hello moon',
