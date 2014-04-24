@@ -40,7 +40,7 @@ describe('A template using both loop and inline variables', function () {
     });
   });
 
-  // TODO: Enable and fix this
+  // TODO: Enable and fix this https://github.com/twolfson/reverse-mustache/issues/4
   describe.skip('when an inline and loop share the same object but have different properties', function () {
     reverseMustacheUtils.save({
       template: '{{place.name}} {{#place}}{{id}}{{/place}}',
