@@ -67,7 +67,7 @@ describe('A mustache template with a partial token', function () {
       template: 'hello {{#place}}{{> name}}{{/place}}',
       content: 'hello moon',
       partials: {
-        place: '{{name}}'
+        name: '{{name}}'
       }
     });
 
