@@ -86,6 +86,31 @@ reverseMustache({
 // {place: 'moon'}
 ```
 
+### Partials
+This is an example using an object containing partials
+
+```js
+reverseMustache({
+  template: 'hello {{> place}}',
+  content: 'hello moon'
+  partials: {
+    place: '{{name}}'
+  }
+});
+// {place: {name: 'moon'}}
+```
+
+### Tags
+This is an example using an alternative open/close tags
+
+```js
+reverseMustache({
+  template: 'hello <%=place%>',
+  content: 'hello moon'
+});
+// {place: 'moon'}
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint via [grunt](https://github.com/gruntjs/grunt) and test via `npm test`.
 
