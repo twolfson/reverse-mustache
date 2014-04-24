@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.6.2 - Cleaned up `.skip's` and TODO's by removing or converting into issues
+
 1.6.1 - Documented partials and alternative tags
 
 1.6.0 - Added support for alternative tags
