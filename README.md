@@ -64,7 +64,7 @@ If the match is successful, it will return an object `context`.
 [x] Reverse nested objects/nested paths
 [x] Reverse inverted conditionals
 [x] Handle comments
-[ ] Handle partials (should be automatic)
+[x] Handle partials
 [ ] Handle alternative start/close tags
 ```
 
