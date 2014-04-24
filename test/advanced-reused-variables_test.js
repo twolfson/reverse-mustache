@@ -102,9 +102,9 @@ describe('A mustache template with re-used variables', function () {
     });
   });
 
-  // TODO: Let's test some functional inner loops before doing this one
   // DEV: These tests are irrelevant since we cannot distinguish outer context from inner context in loops
-  describe.skip('when reversed with a contradicting inner loop', function () {
+  /*
+  describe('when reversed with a contradicting inner loop', function () {
     // Since we double loop, the only valid  `world` counts are squares
     reverseMustacheUtils.save({
       template: 'hello{{#places}}{{#places}} world{{/places}}{{/places}}',
@@ -116,7 +116,7 @@ describe('A mustache template with re-used variables', function () {
     });
   });
 
-  describe.skip('when reversed with an agreeing inner loop', function () {
+  describe('when reversed with an agreeing inner loop', function () {
     // Since we double loop, the only valid  `world` counts are squares
     reverseMustacheUtils.save({
       template: 'hello{{#places}}{{#places}} world{{/places}}{{/places}}',
@@ -129,4 +129,5 @@ describe('A mustache template with re-used variables', function () {
       expect(this.result.places).to.have.property('length', 2);
     });
   });
+  */
 });

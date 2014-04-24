@@ -7,7 +7,8 @@ describe('A mustache template with variables in its loop', function () {
   // TODO: When we introduce this inheritance, we need to *not* set `true` for the original token becuase it will be applying under the namespace of the current item (or will it?) =_= -- {{#place}}{{name}}{{/place}} (was `name` global or `place.name`)?
   // DEV: We are skipping this since it conflicts with `{{#place}}{{name}}{{/place}}` as it is impossible to tell whether `name` was a property of `place` or if `name` is a global
   // TODO: This can be resolved via a `schema` or variable type hinting but that is not as elegant
-  describe.skip('using the outer context', function () {
+  /*
+  describe('using the outer context', function () {
     describe('when reversed', function () {
       reverseMustacheUtils.save({
         template: '{{#place}}{{place.name}}{{/place}}',
@@ -20,6 +21,7 @@ describe('A mustache template with variables in its loop', function () {
       });
     });
   });
+  */
 
   describe('using the loop variables context', function () {
     describe('when reversed', function () {
