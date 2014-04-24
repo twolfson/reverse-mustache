@@ -89,3 +89,27 @@ describe('A mustache template with a partial token', function () {
     });
   });
 });
+
+describe.only('A mustache template with a partial token', function () {
+  describe('when uses different partials twice', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{> place}}',
+      content: 'hello moon',
+      partials: {
+        place: 'moon'
+      }
+    });
+    reverseMustacheUtils.save({
+      template: 'hello {{> place}}',
+      content: 'hello sun',
+      partials: {
+        place: 'sun'
+      }
+    });
+
+    it('does not have inter-template cache issues', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result).to.be.an('object');
+    });
+  });
+});
