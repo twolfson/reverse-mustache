@@ -90,7 +90,7 @@ describe('A mustache template with a partial token', function () {
   });
 });
 
-describe.only('A mustache template with a partial token', function () {
+describe('A mustache template with a partial token', function () {
   describe('when uses different partials twice', function () {
     reverseMustacheUtils.save({
       template: 'hello {{> place}}',
