@@ -6,6 +6,7 @@ describe.only('A mustache template with alternative tags', function () {
     reverseMustacheUtils.save({
       template: 'hello <%=place%>',
       content: 'hello moon',
+      tags: ['<%=', '%>']
     });
 
     it('returns meta information', function () {
