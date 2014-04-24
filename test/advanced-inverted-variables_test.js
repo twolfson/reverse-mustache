@@ -56,7 +56,7 @@ describe('A mustache template with an inverted token and an existing variable', 
     });
   });
 
-  describe('when the inverted token comes last', function () {
+  describe.only('when the inverted token comes last', function () {
     reverseMustacheUtils.save({
       template: 'empty{{empty}} string is {{^empty}}empty{{/empty}}',
       content: 'empty string is empty'
