@@ -76,4 +76,16 @@ describe('A mustache template with a partial token', function () {
       expect(this.result).to.deep.equal({place: {name: 'moon'}});
     });
   });
+
+  describe.only('when reversed with an unrecognized partial in a loop', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{#place}}{{> unknown}}{{/place}}',
+      content: 'hello moon',
+    });
+
+    it('does not hang', function () {
+      // Indetermine of whether we should throw or ignore it
+      // but we should never ever hang
+    });
+  });
 });
