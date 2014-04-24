@@ -64,8 +64,6 @@ describe('A mustache template with an inline inverted token', function () {
   });
 });
 
-// TODO: Test inline variables
-
 // TODO: Test nested content
 
 // TODO: We probably need some tests with inverted combined with other scenarios
