@@ -10,7 +10,7 @@ exports.save = function (params) {
 
     // For behavioral sanity, verify `result + template` matches `content`
     if (this.result) {
-      var actualOutput = mustache.render(params.template, this.result);
+      var actualOutput = mustache.render(params.template, this.result, params.partials);
       expect(actualOutput).to.equal(params.content);
     }
   });
