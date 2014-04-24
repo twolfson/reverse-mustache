@@ -63,7 +63,7 @@ If the match is successful, it will return an object `context`.
 [x] Re-use variables / prevent contradictions
 [x] Reverse nested objects/nested paths
 [x] Reverse inverted conditionals
-[ ] Handle comments
+[x] Handle comments
 [ ] Handle partials (should be automatic)
 [ ] Handle alternative start/close tags
 ```
