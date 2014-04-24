@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.5.0 - Fixed up mustache template caching issues with partials
+
 1.4.0 - Added support for partials
 
 1.3.0 - Added support for comments
