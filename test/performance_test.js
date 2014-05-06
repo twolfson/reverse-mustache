@@ -4,10 +4,12 @@ var reverseMustacheUtils = require('./utils/reverse-mustache');
 
 describe('A mustache template with a variable', function () {
   describe('when reversing a very large content block', function () {
-    var lotsOfAs = new Array(9001).join('a');
+    // 50,000 a's (x2) is equivalent to a beautified http://nitevibe.com/
+    // DEV: See https://gist.github.com/twolfson/11136618
+    var lotsOfAs = new Array(5e4).join('a');
     reverseMustacheUtils.save({
-      template: 'aa {{place}}' + lotsOfAs,
-      content: 'aa moon' + lotsOfAs
+      template: lotsOfAs + 'aa {{place}}' + lotsOfAs,
+      content: lotsOfAs + 'aa moon' + lotsOfAs
     });
 
     it('returns meta information', function () {
