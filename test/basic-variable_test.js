@@ -2,7 +2,7 @@ var expect = require('chai').expect;
 var reverseMustacheUtils = require('./utils/reverse-mustache');
 
 describe('A mustache template with a variable', function () {
-  describe('when reversed with matching content', function () {
+  describe.only('when reversed with matching content', function () {
     reverseMustacheUtils.save({
       template: 'hello {{place}}',
       content: 'hello moon'

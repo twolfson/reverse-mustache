@@ -31,7 +31,8 @@
   "dependencies": {
     "mustache": "~0.8.1",
     "clone": "~0.1.11",
-    "pathval": "~0.1.1"
+    "pathval": "~0.1.1",
+    "escape-regexp": "0.0.1"
   },
   "devDependencies": {
     "mocha": "~1.11.0",

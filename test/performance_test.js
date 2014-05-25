@@ -31,6 +31,8 @@ describe('A mustache template with a variable', function () {
 
     });
   });
+
+  // TODO: Test that we use regexp escaping
 });
 
 describe.skip('A mustache template with a variable in a loop', function () {
