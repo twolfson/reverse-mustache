@@ -25,6 +25,12 @@ describe('A mustache template with a variable', function () {
     });
   });
 
+  describe.skip('when reversing a huge amount of content (over node\'s regexp limit)', function () {
+    var lotsOfAs = new Array(5e4).join('a');
+    it('returns meta information', function () {
+
+    });
+  });
 });
 
 describe.skip('A mustache template with a variable in a loop', function () {
