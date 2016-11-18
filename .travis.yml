@@ -1,3 +1,4 @@
+sudo: false
 language: node_js
 node_js:
   - "6"
@@ -7,5 +8,12 @@ matrix:
   allow_failures:
     - node_js: "5"
 
+before_install:
+  - curl --location http://rawgit.com/twolfson/fix-travis-ci/master/lib/install.sh | bash -s
+
 notifications:
-  email: false
+  email:
+    recipients:
+      - todd@twolfson.com
+    on_success: change
+    on_failure: change
