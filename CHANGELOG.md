@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.8.0 - Repaired support for backtracking on variable reuse via @adrianheine in #5
+
 1.7.0 - Moved to Node>=4 to fix Travis CI issues
 
 1.6.3 - Added `foundry` for releases
