@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.7.0 - Moved to Node>=4 to fix Travis CI issues
+
 1.6.3 - Added `foundry` for releases
 
 1.6.2 - Cleaned up `.skip's` and TODO's by removing or converting into issues
