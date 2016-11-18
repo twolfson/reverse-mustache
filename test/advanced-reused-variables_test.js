@@ -102,6 +102,18 @@ describe('A mustache template with re-used variables', function () {
     });
   });
 
+  describe('when reversed with different content afterwards', function () {
+    reverseMustacheUtils.save({
+      template: 'hello {{place}} {{locator}}, {{place}} {{descriptor}}!',
+      content: 'hello world in universe, world is great!'
+    });
+
+    it('matches the variable and re-uses it during matching', function () {
+      expect(this.result).to.not.equal(null);
+      expect(this.result).to.have.property('place', 'world');
+    });
+  });
+
   // DEV: These tests are irrelevant since we cannot distinguish outer context from inner context in loops
   /*
   describe('when reversed with a contradicting inner loop', function () {
