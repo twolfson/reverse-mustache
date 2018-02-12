@@ -1,4 +1,6 @@
 # reverse-mustache changelog
+1.9.0 - Upgraded to `mustache@2.3.0` to fix GitHub vulnerability warning
+
 1.8.0 - Repaired support for backtracking on variable reuse via @adrianheine in #5
 
 1.7.0 - Moved to Node>=4 to fix Travis CI issues
